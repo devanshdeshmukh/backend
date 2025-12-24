@@ -1,7 +1,14 @@
-const http = require("http")
+const express = require('express');
 
-const server = http.createServer()
+const app = express(); //server create ho jata hai..
 
-server.listen(3000, ()=>{
-    console.log("Server is running on port 3000")
+app.get('/home',(req,res)=>{
+    res.send("welcome to home page")
+})
+
+app.get('/about', (req,res)=>{
+    res.send("welcome to about page")
+})
+app.listen(3000, ()=>{
+    console.log("Server is running on port 3000");
 })
